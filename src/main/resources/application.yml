@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: local
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    url: jdbc:h2:tcp://localhost/~/dslshop
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true #실행되는 JPQL을 볼 수 있다.
+
+logging.level:
+  org.hibernate.SQL: trace
+  #Logger를 통해 하이버네이트 실행 SQL을 남긴다.
+  #반면에 show_sql은  System.out을 통해 남긴다.
